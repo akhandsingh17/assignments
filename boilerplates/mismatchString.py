@@ -29,4 +29,3 @@ assert cmp_lst(return_mismatched("This is the first string","This is the second 
 assert cmp_lst(return_mismatched("This is the first string extra","This is the second string"),['first', 'second', 'extra']) == True
 assert cmp_lst(return_mismatched("This is the first text","This is the second string"),['first', 'text', 'second', 'string']) == True
 assert cmp_lst(return_mismatched("Firstly this is the first string","Next is the second string"), ['Firstly', 'this', 'first', 'Next', 'second']) == True
-print('passed')
