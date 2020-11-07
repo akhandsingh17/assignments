@@ -1,4 +1,14 @@
 def ReverseNumber(num):
+
+    # Constants.
+    MAX_INT = 2147483647 # 2**31 - 1
+    MIN_INT = -2147483648       # -2**31
+
+    if num == 0 :
+        return num
+
+    neg_flag = True if num < 0 else False
+    num = abs(num)
     found = False
     result = []
     while num != 0:
@@ -10,9 +20,16 @@ def ReverseNumber(num):
             found = True
             result.append(str(key))
         num = int(num/10)
-    return ''.join(result)
+    output = int(''.join(result))
+    if output > MAX_INT:
+        return 0
+    elif output < MIN_INT:
 
+        return 0
+    return output if not neg_flag else (-1) * output
 
 if __name__ == "__main__":
-    n = 340500
-    assert (ReverseNumber(n)) == '5043'
+    assert (ReverseNumber(340500)) == 5043
+    assert (ReverseNumber(-123)) == -321
+    assert (ReverseNumber(0)) == 0
+    assert (ReverseNumber(1534236469)) == 0
