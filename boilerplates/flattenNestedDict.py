@@ -1,5 +1,5 @@
 """
-Suppose you have a dic
+Suppose you have a dict
 
 {'a': 1,
  'c': {'a': 2,
