@@ -21,10 +21,7 @@ def ReverseNumber(num):
             result.append(str(key))
         num = int(num/10)
     output = int(''.join(result))
-    if output > MAX_INT:
-        return 0
-    elif output < MIN_INT:
-
+    if output > MAX_INT or output < MIN_INT:
         return 0
     return output if not neg_flag else (-1) * output
 

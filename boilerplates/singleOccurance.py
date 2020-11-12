@@ -2,7 +2,7 @@ from collections import Counter
 
 def singleNumber(A):
     """
-    Get the lost of numbers with single frequency
+    Get the list of numbers with single frequency
     :param A:
     :return:
     """

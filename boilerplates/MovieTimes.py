@@ -17,7 +17,7 @@ def MovieTimes(lst):
         else:
             k += 1
             result.append(lst[i])
-    watch = sum(list(map(lambda x:x[1]-x[0], result)))
+    watch = sum(list(map(lambda x: x[1]-x[0], result)))
     return watch
 
 def MovieTimesAct2(lst):
