@@ -30,10 +30,12 @@ class Solution:
         dct = {}
         for candidate in candidates:
             comp = candidate - target
-            if candidate not in dct.keys():
+            if comp in dct.keys():
                 dct[candidate] = comp
+            else:
+                dct[candidate]
         return dct
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.combinationSum(candidates=[2,3,6,7], target=7))
+    print(s.combinationSum(candidates=[2, 3, 6, 7], target=7))
