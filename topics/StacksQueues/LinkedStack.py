@@ -1,4 +1,4 @@
-from assignments.topics.StacksQueues.EmptyException import EmptyStackException
+from topics.StacksQueues.EmptyException import EmptyStackException
 
 """ LIFO stack implemention using a singly linked list for storage """
 class LinkedStack:
