@@ -1,7 +1,9 @@
 """
 # Travel Buddies
 #
-# Let’s say Airbnb launches a new feature called "Travel Buddies". As part of this feature, users create wishlists of cities they want to visit. For the purpose of this question, let these wishlists be provided as a file with the following format:
+# Let’s say Airbnb launches a new feature called "Travel Buddies".
+As part of this feature, users create wishlists of cities they want to visit.
+For the purpose of this question, let these wishlists be provided as a file with the following format:
 #
 # <user name>,<city 1>,<city 2>...
 # <user name>,<city 1>,<city 2>...

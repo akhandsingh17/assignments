@@ -37,7 +37,7 @@ class Solution:
                 print("market:{},price:{}".format(market, pricelist[mid]))
             else:
                 idx1 = len(pricelist)//2
-                idx2 = len(pricelist)//2 -1
+                idx2 = len(pricelist)//2 + 1
                 median = (pricelist[idx1] + pricelist[idx2])/2
                 print("market:{},price:{}".format(market, median))
 
