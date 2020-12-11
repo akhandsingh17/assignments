@@ -69,3 +69,12 @@ if __name__ == "__main__":
     root.right.left = TreeNode(15)
     root.right.right = TreeNode(7)
     print(s.levelOrder(root))
+
+    root = TreeNode(1)
+    root.left = TreeNode(2)
+    root.left.left = TreeNode(3)
+    root.left.right = TreeNode(4)
+    root.right = TreeNode(2)
+    root.right.left = TreeNode(4)
+    root.right.right = TreeNode(3)
+    print(s.levelOrder(root))
