@@ -1,3 +1,4 @@
+
 # +-------------------+-------------+------+-----+---------+-------+
 # | Field             | Type        | Null | Key | Default | Extra |
 # +-------------------+-------------+------+-----+---------+-------+
@@ -22,7 +23,8 @@
 # | units_sold       | decimal(10,4) | NO   |     | NULL    |       |
 # | transaction_date | date          | YES  |     | NULL    |       |
 # +------------------+---------------+------+-----+---------+-------+
-# Return a list of store name, year, month and total store_sales for each month that total store_sales increased from the previous month.
+#
+Return a list of store name, year, month and total store_sales for each month that total store_sales increased from the previous month.
 # */
 
 with CTE as (

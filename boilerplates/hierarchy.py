@@ -22,5 +22,4 @@ if __name__=='__main__':
         "architect": ["developer"],
         "ceo": [],
     }
-
     print(get_hierarchy(company_hierarchy=company_hierarchy, account='vice_president'))
