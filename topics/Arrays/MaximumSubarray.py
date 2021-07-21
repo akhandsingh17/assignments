@@ -13,27 +13,21 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
 
 """
 
+from sys import maxsize
 
 class Solution:
     def maxSubArray(self, nums) -> int:
-        best_sum = 0
-        curr_sum = 0
-        best_start = best_end = 0
-        if len(nums) == 1:
-            return nums[0]
+        max_so_far = -maxsize - 1
+        max_ending_here = 0
 
-        for curr_end, x in enumerate(nums):
-            if curr_sum < 0:
-                # Start a new sequence at the current element
-                curr_start = curr_end
-                curr_sum = x
-            else:
-                curr_sum += x
-            if curr_sum > best_sum:
-                best_sum = curr_sum
-                best_start = curr_start
-                best_end = curr_end + 1 # the +1 is to make 'best_end' exclusive
-        return best_sum
+        for i in range(0, len(nums)):
+            max_ending_here += nums[i]
+            if max_so_far < max_ending_here:
+                max_so_far = max_ending_here
+
+            if max_ending_here < 0:
+                max_ending_here = 0
+        return max_so_far
 
 if __name__ == "__main__":
     s = Solution()

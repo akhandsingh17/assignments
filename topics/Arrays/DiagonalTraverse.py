@@ -41,7 +41,7 @@ class Board:
                 dd[i+j].append(self._board[i][j])
 
         for k in sorted(dd.keys()):
-            if k % 2 == 1:
+            if k % 2 == 0:
                 dd[k].reverse()
             result += dd[k]
         return result
