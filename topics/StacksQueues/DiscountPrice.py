@@ -4,3 +4,20 @@ if you buy the ith item, then you will receive a discount equivalent to prices[j
 prices[j] <= prices[i], otherwise, you will not receive any discount at all
 
 """
+from typing import List
+
+class Solution:
+    def finalPrices(self, prices: List[int]) -> List[int]:
+        stack = []
+        for i, num in enumerate(prices):
+            while stack and prices[stack[-1]] >= num:
+                popIndex = stack.pop()
+                prices[popIndex] -= num
+            stack.append(i)
+        return prices
+
+
+if __name__ == "__main__":
+    prices = [8, 4, 6, 2, 3]
+    s = Solution()
+    assert s.finalPrices(prices) == [4,2,4,2,3]
