@@ -20,4 +20,4 @@ class Solution:
 if __name__ == "__main__":
     prices = [8, 4, 6, 2, 3]
     s = Solution()
-    assert s.finalPrices(prices) == [4,2,4,2,3]
+    assert s.finalPrices(prices) == [4, 2, 4, 2, 3]
