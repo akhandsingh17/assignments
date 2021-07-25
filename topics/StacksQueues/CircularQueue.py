@@ -1,4 +1,4 @@
-from assignments.topics.StacksQueues.EmptyException import EmptyStackException
+from topics.StacksQueues.EmptyException import EmptyStackException
 
 """ Circular Queue using singly linked list for round robin scheduler  """
 class CircularQueue:

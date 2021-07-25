@@ -1,4 +1,4 @@
-from assignments.Topic.StacksQueues.DoublyLinkedBase import _DoublyLinkedBase
+from topics.StacksQueues.DoublyLinkedBase import _DoublyLinkedBase
 
 class PositionalList(_DoublyLinkedBase):
     """ A sequential container of elemtns allowing positional access """
