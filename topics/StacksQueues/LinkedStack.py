@@ -1,8 +1,11 @@
 from topics.StacksQueues.EmptyException import EmptyStackException
 
-""" LIFO stack implemention using a singly linked list for storage """
+""" LIFO stack implementation using a singly linked list for storage """
+
+
 class LinkedStack:
     """ nested nonpublic class _None """
+
     class _Node:
         def __init__(self, element: int, next: "_Node" = None):
             self._element = element
@@ -22,8 +25,8 @@ class LinkedStack:
         return self._size == 0
 
     def push(self, e: int) -> None:
-         self._head = self._Node(e, self._head)
-         self._size += 1
+        self._head = self._Node(e, self._head)
+        self._size += 1
 
     def top(self) -> int:
         if self.isEmpty():
@@ -39,6 +42,7 @@ class LinkedStack:
             self._head = self._head._next
             self._size -= 1
             return answer
+
 
 if __name__ == "__main__":
     s = LinkedStack()
@@ -60,4 +64,3 @@ if __name__ == "__main__":
         s.pop()
     except EmptyStackException:
         pass
-
