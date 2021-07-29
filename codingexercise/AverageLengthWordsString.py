@@ -3,23 +3,18 @@ Find the Average length of the word in the string.
 '''
 
 def AverageLenghtWordsString(str1):
+    filtered = ''.join(filter(lambda x: x not in '".,;!', str1))
+    words = [word for word in filtered.split() if word]
+    avg = sum(map(len, words))/len(words)
+    return "{:.2f}".format(avg)
 
-    lst=str1.split()
-
-    word_cnt=0
-
-    for i in range(0,len(lst)):
-        key=lst[i]
-        word_cnt=word_cnt+len(key)
-
-    return word_cnt/len(lst)
 
 def main():
 
     str1='The sky is very blue today'
     print(AverageLenghtWordsString(str1))
 
-    str1 = 'This is Kartik Sayee working in Expedia'
+    str1 = 'This is another example of word length'
     print(AverageLenghtWordsString(str1))
 
     str1 = 'United States'
