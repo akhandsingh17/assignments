@@ -11,6 +11,7 @@ Output : 5
 
 """
 
+
 class Graph(object):
 
     def __init__(self, graph):
@@ -23,23 +24,21 @@ class Graph(object):
         return ((0 <= i < self.row) and (0 <= j < self.col) and
                 not visited[i][j] and self.graph[i][j])
 
-
     # A utility function to do DSF for a 2D Boolean matrix. For each cell there could be 8 possible directions.
 
-    def DFS(self,i, j, visited):
+    def DFS(self, i, j, visited):
         rowNbr = [-1, -1, -1, 0, 0, 1, 1, 1]
         colNbr = [-1, 0, 1, -1, 1, -1, 0, 1]
 
-    # Mark this cell as visited
+        # Mark this cell as visited
         visited[i][j] = True
 
-    # recursion for all connected neighbours for a given cell
+        # recursion for all connected neighbours for a given cell
         for k in range(8):
             if self.isSafe(i + rowNbr[k], j + colNbr[k], visited):
                 self.DFS(i + rowNbr[k], j + colNbr[k], visited)
 
-
-    # Main funtion to that returns the count of connected islands
+    # Main function to that returns the count of connected islands
 
     def countIslands(self):
         # make a boolean array to track visited nodes and mark them False
@@ -71,7 +70,6 @@ def main():
     g = Graph(graph)
     assert g.countIslands() == 1
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()
-
-
