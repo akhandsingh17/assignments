@@ -5,7 +5,7 @@
 def CharRemoveAnagram(s1, s2):
     big = s1 if len(s1) > len(s2) else s2
     small = s1 if len(s1) < len(s2) else s2
-    map1 , map2 = {}, {}
+    map1, map2 = {}, {}
     for c in big:
         map1[c] = map1.get(c, 0) + 1
     for c in small:
@@ -14,7 +14,8 @@ def CharRemoveAnagram(s1, s2):
         if k in map2.keys():
             map1[k] = map1.get(k, 0) - 1
 
-    return len(list(filter(lambda x:x[1] == 1 , map1.items())))
+    return len(list(filter(lambda x: x[1] == 1, map1.items())))
+
 
 def main():
     assert CharRemoveAnagram(s1='bcadeh', s2='hea') == 3
