@@ -3,7 +3,7 @@ Given two binary strings, return their sum (also a binary string).
 The input strings are both non-empty and contains only characters 1 or 0.
 Simply put ; calculate the sum of two integers without using sum operator
 """
-
+import typing 
 
 class Solution:
     def addBinary(self, a: str, b: str):

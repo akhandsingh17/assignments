@@ -1,5 +1,6 @@
-# Generate two output strings depending upon occurrence of character in input string in Python
-# Given an input string str[], generate two output strings. One of which consists of those character which occurs only once in input string and second which consists of multi-time occurring characters. Output strings must be sorted.
+# Generate two output strings depending upon occurrence of character in input string in Python Given an input string
+# str[], generate two output strings. One of which consists of those character which occurs only once in input string
+# and second which consists of multi-time occurring characters. Output strings must be sorted.
 
 def getDict(str):
 

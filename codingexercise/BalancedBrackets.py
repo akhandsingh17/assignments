@@ -1,80 +1,86 @@
 # Check if the brackets in the given string in balanced or not.
 
-def BalancedBrackets(str1):
+class ArrayStack:
+    def __init__(self):
+        self._slist = []
 
-    lst=list(str1)
-    tmp=[]
-    inside=False
-    flg=True
+    def isEmpty(self):
+        return len(self._slist) == 0
 
-    for i in range(0,len(lst)):
-        inside=True
-        key=lst[i]
+    def top(self):
+        if self.isEmpty():
+            raise("Stack is Empty")
+        else:
+            return self._slist[-1]
 
-        if key=='{' or key=='(' or key=='[' or key=='<':
-            tmp.append(key)
-        elif key=='}' or key==')' or key==']' or key=='>':
-            if len(tmp)>0:
-                if (key=='}' and tmp[-1]=='{') or (key=='>' and tmp[-1]=='<') or (key==')' and tmp[-1]=='(') or (key==']' and tmp[-1]=='['):
-                    tmp.pop()
-                else:
-                    flg=False
-                    break
-            else:
-                flg=False
-                break
-    if len(tmp)==0 and inside==False:
-        return False
-    elif len(tmp)>0 and flg==True:
-        return False
-    elif len(tmp)==0 and flg==True:
-        return True
-    elif flg==False:
-        return False
+    def push(self,item):
+        self.item = item
+        if self.item:
+            self._slist.append(item)
+
+    def pop(self):
+        if self.isEmpty():
+            raise("Stack is Empty")
+        else:
+            return self._slist.pop()
+
+    def check_balanced_string(self, in_str):
+        left = ['[','(','{','<']
+        right = [']',')','}','>']
+        for chr in in_str:
+            if chr in left:
+                self.push(chr)
+            elif chr in right:
+                if self.isEmpty():
+                    return False
+                if right.index(chr) != left.index(self.pop()):
+                    return False
+        return self.isEmpty()
 
 def main():
 
+    s = ArrayStack()
     str1 = '({}[]()<>)'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = '(<[()]>)'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = ''
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = '([]{{<>}()})'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = '((((((())'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = '()))'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = '(()()(()'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = ''
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = 'This<might>not(be{balanced}'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = '{(<[SimpleExampleForBalanced]>)}'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = '{)(<[This]is>not)balanced}'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = '{(<[simple])>}'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = '{Another{Example<of>Unbalanced}String'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
     str1 = '(This)is<how>balanced{string}with[paranthesis]canbe'
-    print(BalancedBrackets(str1))
+    print(s.check_balanced_string(str1))
 
 if __name__=='__main__':
     main()
