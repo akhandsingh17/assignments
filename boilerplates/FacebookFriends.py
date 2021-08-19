@@ -9,10 +9,11 @@ from collections import defaultdict
 def facebookfriends(matrix):
     dct = defaultdict(list)
     for rel in matrix:
-        if len(rel) > 1:
-            dct[rel[0]].append(rel[1])
-        else:
-            dct[rel[0]].append('')
+        for p in rel:
+            if len(rel) > 1:
+                dct[p].extend(list( x for x in rel if x not in p))
+            else:
+                dct[p].append('')
     result = {k: sum(map(len, v)) for k, v in dct.items()}
     return result
 
