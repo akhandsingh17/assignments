@@ -3,18 +3,11 @@
 # print the first one.
 
 
-input = {'a':1,'b':2,'c':3,'d':4,'e':3,'f':4, 'g':5}
+input = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 3, 'f': 4, 'g': 5}
 
-from heapq import heapify, heappop, heappush, nlargest
-from collections import defaultdict
 
-heap = []
-inverseDict = defaultdict(list)
-for k, v in input.items():
-    if v not in inverseDict:
-        heappush(heap, v)
-        inverseDict[v].append(k)
+def nHighestVal(input, k):
+    input = sorted(input.items(), key=lambda x: x[1], reverse=True)
+    return input[k-1]
 
-nthLargestVal = nlargest(10, heap)[-1]
-
-print('val: {}, key: {} '.format(nthLargestVal, sorted(inverseDict[nthLargestVal])[0]))
+print(nHighestVal(input, 3))
