@@ -79,3 +79,9 @@ select customer_id , count(distinct  brandname) from
 product pd join sales s on pd.product_id = s.product_id
 where brand_name in ('Fort West', 'Golden')
 group by customer_id having count(distinct brandname ) = 2
+
+#
+#     find sum of unit sold for each product class
+# the ratio of unit_sold with valid promotion /without valid promotion
+#     result should in increasing order of total_cost
+
