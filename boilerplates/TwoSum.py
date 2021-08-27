@@ -23,3 +23,4 @@ class Solution:
 if __name__ == "__main__":
     s = Solution()
     print(s.twoSum(nums=[2, 7, 11, 15], target=9))
+    print(s.twoSum(nums=[-1, 0, 1, 2, -1, -4], target=3))

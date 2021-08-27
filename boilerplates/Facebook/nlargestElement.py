@@ -8,6 +8,7 @@ input = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 3, 'f': 4, 'g': 5}
 
 def nHighestVal(input, k):
     input = sorted(input.items(), key=lambda x: x[1], reverse=True)
-    return input[k-1]
+    return input[k - 1]
+
 
 print(nHighestVal(input, 3))
