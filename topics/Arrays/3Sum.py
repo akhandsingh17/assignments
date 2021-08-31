@@ -17,21 +17,28 @@ from typing import List, Dict
 
 
 class Solution:
-    def twoSum(self, nums: List[int], target: int, current_index: int):
-        dct = {}
+    def threeSum(self, nums: List[int]):
+        res = []
+        nums.sort()
         for idx, num in enumerate(nums):
-            if idx != current_index:
-                comp = target - num
-                if comp in dct.keys():
-                    return [nums[dct[comp]], nums[idx]]
-                else:
-                    dct[num] = idx
+            if idx > 0 and num == nums[idx-1]:
+                continue
 
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
-        result = []
-        for idx, target in enumerate(nums):
-            temp = self.twoSum(nums, target, idx)
-        return result
+            l, r = idx + 1, len(nums) - 1
+
+            while l < r:
+                sum = num + nums[l] +nums[r]
+                if sum > 0:
+                    r -= 1
+                elif sum < 0:
+                    l += 1
+                else:
+                    res.append([num, nums[l], nums[r]])
+                    l += 1
+                    while nums[l] == nums[l-1] and l < r:
+                        l += 1
+        return res
+
 
 if __name__ == "__main__":
     s = Solution()
