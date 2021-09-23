@@ -1,5 +1,5 @@
-"""
-Given an array nums which consists of non-negative integers and an integer m, you can split the array into m non-empty continuous subarrays.
+"""Given an array nums which consists of non-negative integers and an integer m, you can split the array into m
+non-empty continuous subarrays.
 
 Write an algorithm to minimize the largest sum among these m subarrays.
 
@@ -19,6 +19,7 @@ where the largest sum among the two subarrays is only 18.
 
 from typing import List
 
+
 class Solution:
     def splitArray(self, nums: List[int], m: int) -> int:
         def isok(mid):
@@ -31,7 +32,6 @@ class Solution:
                 cursum += num
             return split <= m
 
-
         left = max(nums)
         right = sum(nums) + 1
         while left < right:
@@ -43,7 +43,6 @@ class Solution:
         return left
 
 
-
 if __name__ == '__main__':
     s = Solution()
-    print(s.splitArray(nums = [7,2,5,10,8], m = 2))
+    print(s.splitArray(nums=[7, 2, 5, 10, 8], m=2))
