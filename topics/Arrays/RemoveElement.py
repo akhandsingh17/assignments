@@ -9,6 +9,7 @@ Your function should return length = 2, with the first two elements of nums bein
 It doesn't matter what you leave beyond the returned length.
 """
 
+
 class Solution:
     def removeElement(self, nums, val: int) -> int:
         left, right = 0, len(nums)
@@ -20,7 +21,8 @@ class Solution:
                 left += 1
         return right
 
+
 if __name__ == "__main__":
     s = Solution()
     assert (s.removeElement(nums=[3, 2, 2, 3], val=3)) == 2
-    assert (s.removeElement(nums=[0,1,2,2,3,0,4,2], val=2)) == 5
+    assert (s.removeElement(nums=[0, 1, 2, 2, 3, 0, 4, 2], val=2)) == 5
